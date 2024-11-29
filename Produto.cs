@@ -19,6 +19,8 @@ namespace SisteDeCadastroDeProdutos
 
         private int _totalProduto = 0;
         List<string> _listaprodutos = new List<string> { };
+        Dictionary<string, int> _dicionario = new Dictionary<string, int>();
+
 
         public Produto(String nome, String quantidade) {
         this._nome = nome;
@@ -31,17 +33,16 @@ namespace SisteDeCadastroDeProdutos
         public void adicionarProduto(String produto, String quantidade) {
             if (produto != null && produto != "" && quantidade != null && quantidade != "")
             {
-                if (_listaprodutos.Contains(produto)) {
+                if (_dicionario.ContainsKey(produto)) {
                      
                     try
                     {
                         int quantidadeC = Convert.ToInt32(quantidade);
-                        _totalProduto += quantidadeC;
-                            Console.WriteLine($"Produto {produto} adiconado na lista, contém o total de {_totalProduto}.");
-                            Console.WriteLine();
-                        
-                   
-                           
+                        _dicionario[produto] += quantidadeC; // Incrementa a quantidade do produto
+                        Console.WriteLine($"Produto '{produto}' atualizado. Total: {_dicionario[produto]}.");
+
+
+
                     }
                     catch(FormatException){ 
                         Console.WriteLine("Digite um valor válido");
@@ -55,9 +56,8 @@ namespace SisteDeCadastroDeProdutos
                     try
                     {
                         int quantidadeC = Convert.ToInt32(quantidade);
-                        _totalProduto += quantidadeC;
-                        _listaprodutos.Add(produto);
-                        Console.WriteLine($"Produto {produto} com a quantidade de {_totalProduto} adiconado na lista ");
+                        _dicionario.Add(produto, quantidadeC); 
+                        Console.WriteLine($"Produto {produto} com a quantidade de {quantidade} adiconado na lista ");
                         Console.WriteLine();
 
 
@@ -85,12 +85,12 @@ namespace SisteDeCadastroDeProdutos
 
         public void listarProdutos()
         {
-            if(_listaprodutos.Count == 0) { Console.WriteLine("Lista vázia");
+            if(_dicionario.Count == 0) { Console.WriteLine("Lista vázia");
                 Console.WriteLine();
             }
             else { 
             Console.WriteLine("Listando produtos...");
-            foreach (String p in _listaprodutos) {
+            foreach (var p in _dicionario) {
                 
                 Console.WriteLine($"{p}");
                 Console.WriteLine();
@@ -102,21 +102,22 @@ namespace SisteDeCadastroDeProdutos
 
         public void removerProduto(String produto, String? quantidade) {
 
-            if (produto != null && _listaprodutos.Contains(produto)) {
+            if (produto != null && _dicionario.ContainsKey(produto)) {
                     try
                     {
                         int quantidadeC = Convert.ToInt32(quantidade);
-                
-                            _totalProduto -= quantidadeC;
 
-                    if (_totalProduto <= 0)
+                    
+
+                    if (_dicionario[produto] < quantidadeC)
                     {
                         Console.WriteLine("Quantidade de produto zerada, ou valor digitado  para remoção era maior que a quantidade que continha");
                         Console.WriteLine();
                     }
                     else
                     {
-                        Console.WriteLine($"Produto {produto} removido da lista, restam {_totalProduto}");
+                        _dicionario[produto] -= quantidadeC;
+                        Console.WriteLine($"Produto {produto} removido da lista, restam {_dicionario[produto]}");
                         Console.WriteLine();
                     }
 
@@ -145,12 +146,12 @@ namespace SisteDeCadastroDeProdutos
 
         public bool ExisteProduto(string produto)
         {
-            return _listaprodutos.Contains(produto);
+            return _dicionario.ContainsKey(produto);
         }
 
 
         public void consultarProduto(String produto) {
-            if (_listaprodutos.Contains(produto)) { Console.WriteLine($"Produto {produto} existe na lista");
+            if (_dicionario.ContainsKey(produto)) { Console.WriteLine($"Produto {produto} existe na lista");
                 Console.WriteLine();
             }
             else { Console.WriteLine($"Produto {produto} não existe na lista");
