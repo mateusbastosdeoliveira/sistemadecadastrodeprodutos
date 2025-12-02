@@ -1,0 +1,14 @@
+C:\temp\sistemadecadastrodeprodutos\bin\Debug\net9.0\sistemadecadastrodeprodutos.exe
+C:\temp\sistemadecadastrodeprodutos\bin\Debug\net9.0\sistemadecadastrodeprodutos.deps.json
+C:\temp\sistemadecadastrodeprodutos\bin\Debug\net9.0\sistemadecadastrodeprodutos.runtimeconfig.json
+C:\temp\sistemadecadastrodeprodutos\bin\Debug\net9.0\sistemadecadastrodeprodutos.dll
+C:\temp\sistemadecadastrodeprodutos\bin\Debug\net9.0\sistemadecadastrodeprodutos.pdb
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.AssemblyInfoInputs.cache
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.AssemblyInfo.cs
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.csproj.CoreCompileInputs.cache
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.dll
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\refint\sistemadecadastrodeprodutos.dll
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.pdb
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\sistemadecadastrodeprodutos.genruntimeconfig.cache
+C:\temp\sistemadecadastrodeprodutos\obj\Debug\net9.0\ref\sistemadecadastrodeprodutos.dll
